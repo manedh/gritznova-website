@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- Apply saved / system theme before first paint (no flash) -->
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem('gritznova-theme');
+          var t = s === 'light' || s === 'dark' ? s :
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', t);
+          document.documentElement.style.colorScheme = t;
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
+    <!-- Primary SEO -->
+    <title>GRITZNOVA | Software Engineering, AI, Cloud & Digital Solutions</title>
+
+    <meta
+      name="description"
+      content="GRITZNOVA delivers software engineering, AI, cloud, DevOps and digital solutions that help businesses build, scale and transform with modern technology."
+    />
+
+    <meta name="robots" content="index, follow" />
+
+    <meta
+      name="keywords"
+      content="GRITZNOVA, software engineering, AI solutions, cloud solutions, DevOps services, digital solutions, software development, technology solutions"
+    />
+
+    <meta name="author" content="GRITZNOVA" />
+
+    <meta name="theme-color" content="#090a0c" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://www.gritznova.com/"
+    />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:title"
+      content="GRITZNOVA | Software Engineering, AI, Cloud & Digital Solutions"
+    />
+
+    <meta
+      property="og:description"
+      content="Explore GRITZNOVA's software engineering, AI, cloud, DevOps and digital solutions for modern businesses."
+    />
+
+    <meta
+      property="og:url"
+      content="https://www.gritznova.com/"
+    />
+
+    <meta
+      property="og:site_name"
+      content="GRITZNOVA"
+    />
+
+    <!-- Add your social sharing image here -->
+    <meta
+      property="og:image"
+      content="https://www.gritznova.com/og-image.jpg"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="GRITZNOVA software engineering and digital solutions"
+    />
+
+    <!-- Twitter / X -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+
+    <meta
+      name="twitter:title"
+      content="GRITZNOVA | Software Engineering, AI, Cloud & Digital Solutions"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Software engineering, AI, cloud, DevOps and digital solutions from GRITZNOVA."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://www.gritznova.com/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon.png"
+    />
+
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GRITZNOVA",
+        "url": "https://www.gritznova.com/",
+        "logo": "https://www.gritznova.com/logo.png",
+        "description": "GRITZNOVA provides software engineering, AI, cloud, DevOps and digital solutions for businesses."
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
+  </body>
+</html>

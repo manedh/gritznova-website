@@ -1,0 +1,122 @@
+/* Chatbot styles. Loaded as a string (?inline) into a Shadow DOM, so nothing here touches the website. */
+@import "tailwindcss" source(none);
+@source "./components/chat";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+.gz-root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f4f4f5;
+  --surface-3: #e9e9ec;
+  --border: #e4e4e7;
+  --border-strong: #d0d0d6;
+  --fg: #0b0b0c;
+  --fg-muted: #46464d;
+  --fg-subtle: #61616a;
+  --brand: #e10600;
+  --accent: #e10600;
+  --accent-hover: #c20500;
+  --accent-fg: #ffffff;
+  --accent-text: #c40500;
+  --accent-soft: rgb(225 6 0 / 0.07);
+  --accent-ring: rgb(225 6 0 / 0.45);
+  --success: #15803d;
+  --warn: #b45309;
+  --error: #b91c1c;
+  --glass: rgb(255 255 255 / 0.75);
+  color-scheme: light;
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.gz-root[data-theme="dark"] {
+  --bg: #0a0a0b;
+  --surface: #111113;
+  --surface-2: #17171a;
+  --surface-3: #1f1f23;
+  --border: #232327;
+  --border-strong: #323238;
+  --fg: #f4f4f5;
+  --fg-muted: #a6a6ae;
+  --fg-subtle: #898991;
+  --accent-text: #ff4a42;
+  --accent-soft: rgb(225 6 0 / 0.12);
+  --accent-ring: rgb(255 74 66 / 0.55);
+  --success: #4ade80;
+  --warn: #fbbf24;
+  --error: #f87171;
+  --glass: rgb(17 17 19 / 0.72);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+  --color-brand: var(--brand);
+  --color-success: var(--success);
+  --color-warn: var(--warn);
+  --color-error: var(--error);
+  --color-glass: var(--glass);
+}
+
+@theme {
+  /* Uses the website's own fonts (Manrope / DM Mono are loaded by the site). */
+  --font-sans: Manrope, system-ui, Arial, sans-serif;
+  --font-display: Manrope, system-ui, Arial, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.25);
+  --shadow-md: 0 1px 2px rgb(0 0 0 / 0.2), 0 6px 16px rgb(0 0 0 / 0.25);
+  --shadow-lg: 0 2px 6px rgb(0 0 0 / 0.25), 0 24px 48px rgb(0 0 0 / 0.35);
+
+  --animate-pulse-once: pulse-ring 1.6s cubic-bezier(0.25, 1, 0.5, 1) 3;
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 var(--accent-ring);
+    }
+    100% {
+      box-shadow: 0 0 0 14px transparent;
+    }
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
